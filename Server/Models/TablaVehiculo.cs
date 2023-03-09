@@ -1,17 +1,17 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Rent_A_Car2023.Server.Models;
+namespace RentaCarBLAZOR.Server.Models;
 
 
 public class TablaVehiculo
 {
     [Key]
             public int Id {get; set;}
-            public string Matricula {get; set;} = null!;
+            public int Matricula {get; set;}
             public string Marca {get; set;} = null!;
             public string Modelos {get; set;} = null!;
             public string Color {get; set;} = null!;
-            public string PrecioRentar {get; set;} = null!;
+            public int PrecioRentar {get; set;}
 
     public bool Crear {get; set;}
     public bool Editar {get; set;}

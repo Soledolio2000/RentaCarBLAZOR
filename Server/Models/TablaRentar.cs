@@ -1,19 +1,19 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Rent_A_Car2023.Server.Models;
+namespace RentaCarBLAZOR.Server.Models;
 
 
 public class TablaRentar
 {
     [Key]
             public int Id {get; set;}
-            public string Matricula {get; set;} = null!;
+            public int Matricula {get; set;}
             public string FechaSalida {get; set;} = null!;
             public string FechaEntrega {get; set;} = null!;
             public string NombreCliente {get; set;} = null!;
             public string ApellidosCliente {get; set;} = null!;
-            public string CedulaCliente {get; set;} = null!;
-            public string TelefonoCliente {get; set;} = null!;
+            public int CedulaCliente {get; set;}
+            public int TelefonoCliente {get; set;}
 
     public bool Crear {get; set;}
     public bool Editar {get; set;}
