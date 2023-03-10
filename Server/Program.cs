@@ -8,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<MyBDRentaCar>();
+builder.Services.AddScoped<IMyBDRentaCar,MyBDRentaCar>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

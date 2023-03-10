@@ -19,7 +19,14 @@ public class ResultList<T> : Result
             return new ResultList<T>(){Succeeded = false, Message = messages}; 
        }
 
-
+     public static ResultList<T> Success(IEnumerable<T> items)
+       {
+            return new ResultList<T>(){
+                Succeeded = true, 
+                Message = new List<string>(){"👍"}, 
+                Items = items
+                }; 
+       }
        public static ResultList<T> Success(IEnumerable<T> items,string message)
        {
             return new ResultList<T>(){

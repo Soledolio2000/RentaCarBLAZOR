@@ -11,19 +11,19 @@ public class RouteApiBase
 
 public class TablaClienteRouteManager: RouteApiBase
 {
-    private const string Base = $"{API}/cliente";
-    public const string GetById = $"{Base}/{IdParameter}";//  /api/cliente/{Id:int}// osea el Id no se generara automatico, si no que se lo estoy asignando//
+    public const string BASE = $"{API}/cliente";
+    public const string GetById = $"{BASE}/{IdParameter}";//  /api/cliente/{Id:int}// osea el Id no se generara automatico, si no que se lo estoy asignando//
     public static string BuildRoute(int Id) => GetById.Replace(IdParameter,Id.ToString());
 }
 public class TablaRentarRouteManager: RouteApiBase
 {
-    private const string Base = $"{API}/rentar";
-    public const string GetById = $"{Base}/{IdParameter}";//  /api/cliente/{Id:int}// osea el Id no se generara automatico, si no que se lo estoy asignando//
+    public const string BASE = $"{API}/rentar";
+    public const string GetById = $"{BASE}/{IdParameter}";//  /api/cliente/{Id:int}// osea el Id no se generara automatico, si no que se lo estoy asignando//
     public static string BuildRoute(int Id) => GetById.Replace(IdParameter,Id.ToString());
 }
 public class TablaVehiculosRouteManager: RouteApiBase
 {
-    private const string Base = $"{API}/vehiculo";
-    public const string GetById = $"{Base}/{IdParameter}";//  /api/cliente/{Id:int}// osea el Id no se generara automatico, si no que se lo estoy asignando//
+    public const string BASE = $"{API}/vehiculo";
+    public const string GetById = $"{BASE}/{IdParameter}";//  /api/cliente/{Id:int}// osea el Id no se generara automatico, si no que se lo estoy asignando//
     public static string BuildRoute(int Id) => GetById.Replace(IdParameter,Id.ToString());
 }
