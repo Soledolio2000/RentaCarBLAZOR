@@ -34,6 +34,7 @@ public class ResultList<T> : Result
                 Message = new List<string>(){message}, 
                 Items = items
                 }; 
+                
        }
 
        public static ResultList<T> Success(IEnumerable<T> items,List<string> messages)
