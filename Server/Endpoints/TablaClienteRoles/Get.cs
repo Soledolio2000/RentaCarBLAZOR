@@ -36,3 +36,5 @@ public class Get : EndpointBaseAsync.WithoutRequest.WithActionResult<Respuesta>
         }
     }
 }
+
+
