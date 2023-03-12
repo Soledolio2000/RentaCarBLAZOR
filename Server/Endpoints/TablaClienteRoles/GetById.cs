@@ -32,7 +32,7 @@ public class GetById : EndpointBaseAsync.WithRequest<Request>.WithActionResult<R
         .FirstOrDefaultAsync(cancellationToken);
 
     if(rol==null)
-        return Respuesta.Fail($"No fue posinle encontrar el rol '{request.Id}' ");
+        return Respuesta.Fail($"No fue posible encontrar el rol '{request.Id}' ");
 
         return Respuesta.Success(rol);
         }
