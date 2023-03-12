@@ -11,7 +11,7 @@ public class RouteApiBase
 
 public class TablaClienteRouteManager: RouteApiBase
 {
-    public const string BASE = $"{API}/cliente";
+    public const string BASE = $"{API}/cliente";//http:/localhots/api/roles/1//
     public const string GetById = $"{BASE}/{IdParameter}";//  /api/cliente/{Id:int}// osea el Id no se generara automatico, si no que se lo estoy asignando//
     public static string BuildRoute(int Id) => GetById.Replace(IdParameter,Id.ToString());
 }

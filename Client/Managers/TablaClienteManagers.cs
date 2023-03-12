@@ -1,13 +1,18 @@
 using RentaCarBLAZOR.Shared.Wrapper;
 using RentaCarBLAZOR.Shared.Records;
 using RentaCarBLAZOR.Shared.Routes;
+using RentaCarBLAZOR.Shared.Requests;
 using RentaCarBLAZOR.Client.Extensions;
+using System.Net.Http.Json;
 
 namespace RentaCarBLAZOR.Client.Managers;
 
 public interface ITablaClienteManager
 {
     Task<ResultList<TablaClienteRecord>> GetAsync();
+    Task<Result<int>> CreateAsync(TablaClienteCreateRequest request);
+    Task<Result<TablaClienteRecord>> CreateAsync(int Id);
+    
 }
 
 public class TablaClienteManager : ITablaClienteManager
@@ -33,4 +38,15 @@ public class TablaClienteManager : ITablaClienteManager
         }
 
     }
+    public async Task<Result<int>> CreateAsync(TablaClienteCreateRequest request)
+    {
+        var response = await httpClient.PostAsJsonAsync(TablaClienteRouteManager.BASE,request);
+        return await response.ToResult<int>();
+    }
+     public async Task<Result<TablaClienteRecord>> CreateAsync(int Id)
+    {
+        var response = await httpClient.GetAsync(TablaClienteRouteManager.BuildRoute(Id));
+        return await response.ToResult<TablaClienteRecord>();
+    }
+
 }
