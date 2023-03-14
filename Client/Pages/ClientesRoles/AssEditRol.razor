@@ -1,0 +1,28 @@
+@page "/rol/crear"
+@page "/rol/editar(Id:int)"
+
+
+<EditForm Model="@Rol" OnInvalidSubmit="Send">
+    <!---En este codigo DataAnnotations y ValidationsSummary 
+    es donde traeremos los requerimientos que se necesita para cada Rol, 
+    como el nombre etc. Si el usuario no lo proporciona mostrara un mensaje pidiendolo.  --->
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <ValidationSummary></ValidationSummary>
+    <label>Nombre</label>
+    <InputText @bind-Value="Rol.Nombre"></InputText>
+    <button type="submit" class="btn btn-success">Ok</button>
+</EditForm>
+
+@code
+{
+    [Parameter]
+    public int Id  {get;set;} = 0;
+
+    public TablaClienteUpdateRequest Rol { get; set; } = new TablaClienteUpdateRequest();
+
+    public async void Send()
+    { 
+        var resultado = await rolesManagers.CreateAsync(Rol);
+    }
+
+}

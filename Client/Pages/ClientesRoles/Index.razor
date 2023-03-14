@@ -1,5 +1,6 @@
 @page "/roles"
 <h2>Roles</h2>
+<button @onclick="Agregar">Agregar</button>
 
 @if(Roles !=null)
 {
@@ -25,6 +26,11 @@ else
                 Roles = response.Items.ToList();
             }
         }
+
+     public void Agregar()
+     {
+        urlHelper.NavigateTo("/rol/crear",false);
+     }   
 }
 
 
